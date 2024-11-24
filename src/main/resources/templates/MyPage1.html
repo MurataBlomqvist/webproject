@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/CSS/MyPage1.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<form th:action="@{/MyPage1/fillHeadandTitle}" th:object="${myPage1Object}" method="post">
+    <table>
+        <tr>
+            <th><h1 th:field="*{toShowHead}" /></th>
+            <th><h1 th:field="*{toShowHead}" /></th>
+        </tr>
+        <tr>
+            <td><input type="String" size="5" th:field="*{toShowTitleUserIn}"></td>
+            <td><input type="String" size="5" th:field="*{toShowHeadUserIn}"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
