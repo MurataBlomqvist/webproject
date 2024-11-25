@@ -1,11 +1,13 @@
-package com.Shared;
+package com.example.Shared;
 
 import org.springframework.stereotype.Component;
+
+import com.example.MyPage1.MyPage1Object;
 
 @Component
 public class ContextObject {
     
-    private MyPage1Object myPage1Object;
+    public MyPage1Object myPage1Object;
 
     public MyPage1Object getMyPage1Object() {
         return this.myPage1Object;

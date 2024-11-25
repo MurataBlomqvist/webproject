@@ -1,4 +1,4 @@
-package com.Shared;
+package com.example.MyPage1;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 
@@ -15,18 +15,7 @@ public class MyPage1Object {
 
         return myPage1Object;
     }
-
-    public MyPage1Object setHeadAndTitle(MyPage1Object myPageObject1) {
-
-        myPageObject1.setToShowHead(myPageObject1.getToShowHeadUserIn());
-        myPageObject1.setToShowTitle(myPageObject1.getToShowTitleUserIn());
-
-        myPageObject1.setToShowHeadUserIn("");
-        myPageObject1.setToShowTitleUserIn("");
-
-        return myPageObject1;
-    }
-    
+  
     private String toShowHead;
     private String toShowTitle;
     private String toShowTitleUserIn;
