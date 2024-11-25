@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form th:action="@{/myPage1}" th:object="${myPage1Object}" method="post">
+<form th:action="@{/myPage1}" th:object="${page1Object}" method="post">
     <table class="inputTable">
         <tr>
             <th><h1 th:field="*{toShowHead}" /></th>
@@ -14,10 +14,14 @@
         </tr>
         <tr>
             <td><input type="String" size="5" th:field="*{toShowTitleUserIn}"></td>
-            <td><input type="String" size="5" th:field="*{toShowHeadUserIn}"></td>
+            <td><input type="String" size="5" th:field="*{ptoShowHeadUserIn}"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+            </td>
         </tr>
     </table>
-    <input type="submit" value="submit" />
 </form>
 
 </body>

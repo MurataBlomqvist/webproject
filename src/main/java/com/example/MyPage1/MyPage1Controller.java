@@ -4,47 +4,52 @@ import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.Shared.ContextObject;
 
 
+
+
 @Controller
+@RequestMapping("/myPage1")
 public class MyPage1Controller {
 
     @Autowired
     ContextObject context;
     
-    @GetMapping("/myPage1")
+    @GetMapping
     public String initPage(
-        @ModelAttribute ContextObject context
+        Model model
     ) {
-        
-        if(Objects.isNull(this.context) || Objects.isNull(this.context.getMyPage1Object())) {
-            MyPage1Object page1Object = new MyPage1Object();
-            context.setMyPage1Object(page1Object.init());
-        } else {
-            context.myPage1Object = this.context.getMyPage1Object();
-        }
-        
-        this.context.setMyPage1Object(context.myPage1Object);
+        MyPage1Object page1Object = new MyPage1Object();
+        page1Object = page1Object.init();
+        model.addAttribute(page1Object);
+
         return "MyPage1";
     }
 
-    @PostMapping("/myPage1")
+    @PostMapping
     public String fillHeadAndTitle(
-        MyPage1Object myPage1Object
+        MyPage1Object page1Object
     ) {
 
-        context.myPage1Object.setToShowHead(context.myPage1Object.getToShowHeadUserIn());
-        context.myPage1Object.setToShowTitle(context.myPage1Object.getToShowTitleUserIn());
+        if (Objects.nonNull(page1Object)) {
 
-        context.myPage1Object.setToShowHeadUserIn("");
-        context.myPage1Object.setToShowTitleUserIn("");
+            page1Object.setToShowHead(page1Object.getToShowHeadUserIn());
+            page1Object.setToShowTitle(page1Object.getToShowTitleUserIn());
+
+        } else {
+            page1Object.setToShowHead("");
+            page1Object.setToShowTitle("");
+        }
         
-        this.context.setMyPage1Object(context.myPage1Object);
+        page1Object.setToShowHeadUserIn("");
+        page1Object.setToShowTitleUserIn("");
+
         return "MyPage1";
     }
 
