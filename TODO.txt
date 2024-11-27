@@ -1,0 +1,10 @@
+
+users table
+        setup table and data
+
+login feature
+        setup site, registration, login feature
+
+test feature
+        add tests for user
+        create, delete, insert, update
