@@ -1,6 +1,8 @@
 
 users table
         setup table and data
+        DONE
+                Test method can now create table and user data
 
 login feature
         setup site, registration, login feature
@@ -8,3 +10,6 @@ login feature
 test feature
         add tests for user
         create, delete, insert, update
+        DONE   
+                Test method can now create table and user data
+        Add more tests

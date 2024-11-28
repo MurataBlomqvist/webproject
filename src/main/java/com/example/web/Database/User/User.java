@@ -1,16 +1,16 @@
 package com.example.web.Database.User;
 
-import java.util.Calendar;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "users", schema = "webproject")
 public class User {
-        
+    
     public User(
             Long id
             , String username
@@ -18,9 +18,9 @@ public class User {
             , String firstname
             , String lastname
             , Character status
-            , Calendar creationDate
+            , String creationDate
             , String creationUser
-            , Calendar updateDate
+            , String updateDate
             , String updateUser
         ) {
             this.id = id;
@@ -34,6 +34,10 @@ public class User {
             this.updateDate = updateDate;
             this.updateUser = updateUser;
 
+    }
+
+    public User() {
+        //TODO Auto-generated constructor stub
     }
 
     @Id
@@ -56,15 +60,15 @@ public class User {
     private Character status;
 
     @Column(nullable = false, name = "creation_date", length = 8)
-    private Calendar creationDate;
+    private String creationDate;
 
     @Column(nullable = false, name = "creation_user", length = 45)
     private String creationUser;
 
-    @Column(nullable = false, name = "update_date", length = 8)
-    private Calendar updateDate;
+    @Column(name = "update_date", length = 8)
+    private String updateDate;
 
-    @Column(nullable = false, name = "update_user", length = 45)
+    @Column(name = "update_user", length = 45)
     private String updateUser;
 
 
@@ -125,19 +129,19 @@ public class User {
         this.updateUser = updateUser;
     }
 
-    public Calendar getUpdateDate() {
+    public String getUpdateDate() {
         return updateDate;
     }
 
-    public void setUpdateDate(Calendar updateDate) {
+    public void setUpdateDate(String updateDate) {
         this.updateDate = updateDate;
     }
 
-    public Calendar getCreationDate() {
+    public String getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Calendar creationDate) {
+    public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
 
