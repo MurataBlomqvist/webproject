@@ -1,4 +1,4 @@
-package com.webproject;
+
 
 import java.util.Collection;
 
@@ -25,7 +25,7 @@ class WebprojectApplicationTests {
 
 	@Test
 	void userRepofindAllActiveUsers() {
-
+		
 		Collection<User> users = userRepo.findAllActiveUsers();
 
 		assertThat(!users.isEmpty());
