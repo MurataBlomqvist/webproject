@@ -21,10 +21,12 @@ class WebprojectApplicationTests {
 	UserRepository userRepo;
 	
 	@Test
-	void contextLoads() {}
+	void contextLoads() {
+		User user = new User();
+	}
 
 	@Test
-	void userRepofindAllActiveUsers() {
+	void userRepoSaveOneUser() {
 		
 		User user = new User();
 		user.setFirstname("Murata");
